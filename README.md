@@ -26,7 +26,7 @@ The analyzer gets the text of a program and prints exceptions thrown from ```mai
 
 The first line of the output must contain the number of exceptions that the main function can throw. In subsequent lines, the names of these exceptions should be printed one by one.
 
-## Example
+## Example 1
 
 **Input:**
 ```
@@ -53,4 +53,68 @@ func1()
 ```
 1
 exc4
+```
+
+## Example 2
+
+**Input:**
+```
+6
+
+  func func1(){maybethrow exc1 func1()}
+
+ func func2(  )  {
+    func3   ()
+  }
+
+func   func3   (  )  {
+  func2 ( )
+     maybethrow    exc3
+}
+
+
+func func4(      ) {
+  func3      ()
+  try      {
+    maybethrow     exc4
+    func5  ()
+  } suppress    exc3
+}
+
+
+
+func func5(   )    {
+  maybethrow   exc4
+  maybethrow    exc3
+    try   {
+    maybethrow    exc5
+  } suppress        exc3
+}
+
+   func    main   (   ) {
+  func1(   )
+  func2(  )
+  func3(      )
+  func4 ()
+  try    {
+      maybethrow exc2
+      
+      maybethrow    exc3      
+    maybethrow exc4
+          try{maybethrow exc6 maybethrow exc7 maybethrow exc8}suppress exc8
+       maybethrow exc5
+     }    suppress     exc3     ,    exc5
+}
+```
+
+**Output:**
+```
+7
+exc7
+exc6
+exc5
+exc4
+exc3
+exc2
+exc1
 ```

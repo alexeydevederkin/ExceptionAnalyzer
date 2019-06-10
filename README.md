@@ -1,6 +1,6 @@
 # ExceptionAnalyzer
 
-This is exception analyzer for one problem of coding championship.
+This is an exception analyzer for one of the coding championship problems.
 
 Imagine a language with this syntax:
 

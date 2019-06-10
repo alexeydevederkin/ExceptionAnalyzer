@@ -1,8 +1,8 @@
 # ExceptionAnalyzer
 
-Exception Analyzer for one problem of coding championship.
+This is exception analyzer for one problem of coding championship.
 
-Language syntax:
+Imagine a language with this syntax:
 
 * ```func f() {...}``` — function declaration
 
@@ -20,9 +20,11 @@ The text of a program can contain an arbitrary number of spaces and blank lines.
 
 The first line of input contains a single integer — the number of function declarations in the code.
 
+It is guaranteed that the program contains the declaration of the ```main``` function.
+
 The analyzer gets the text of a program and prints exceptions thrown from ```main``` function.
 
-In the first line of the output must be the number of exceptions that the main function can throw. In subsequent lines, the names of these exceptions should be printed one by one.
+The first line of the output must contain the number of exceptions that the main function can throw. In subsequent lines, the names of these exceptions should be printed one by one.
 
 ## Example
 
